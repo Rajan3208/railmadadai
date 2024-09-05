@@ -174,20 +174,20 @@ if not data.empty:
     fig.update_layout(hovermode='x unified', yaxis_tickformat='.0%')
     st.plotly_chart(fig, use_container_width=True)
 
-    # Word Cloud of Complaints
-   st.markdown('<p class="medium-font">Most Common Words in Complaints</p>', unsafe_allow_html=True)
-text = ' '.join(filtered_data['complaint_description'])
-words = re.findall(r'\w+', text.lower())
-word_counts = Counter(words)
-common_words = word_counts.most_common(20)  # Get the 20 most common words
+    # Most Common Words in Complaints
+    st.markdown('<p class="medium-font">Most Common Words in Complaints</p>', unsafe_allow_html=True)
+    text = ' '.join(filtered_data['complaint_description'])
+    words = re.findall(r'\w+', text.lower())
+    word_counts = Counter(words)
+    common_words = word_counts.most_common(20)  # Get the 20 most common words
 
-# Create a bar chart of the most common words
-fig = px.bar(x=[word for word, count in common_words], 
-             y=[count for word, count in common_words],
-             labels={'x': 'Word', 'y': 'Count'},
-             title='Most Common Words in Complaints')
-fig.update_layout(xaxis_tickangle=-45)
-st.plotly_chart(fig, use_container_width=True)
+    # Create a bar chart of the most common words
+    fig = px.bar(x=[word for word, count in common_words], 
+                 y=[count for word, count in common_words],
+                 labels={'x': 'Word', 'y': 'Count'},
+                 title='Most Common Words in Complaints')
+    fig.update_layout(xaxis_tickangle=-45)
+    st.plotly_chart(fig, use_container_width=True)
 
     # Sample Complaints with Share Button
     st.markdown('<p class="medium-font">Sample Complaints</p>', unsafe_allow_html=True)
