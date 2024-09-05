@@ -1,7 +1,6 @@
-streamlit
-pandas
-matplotlib
-seaborn
-sqlite3
-plotly
-wordcloud
+streamlit==1.28.0
+pandas==2.1.1
+matplotlib==3.8.0
+seaborn==0.13.0
+plotly==5.17.0
+wordcloud==1.9.2
