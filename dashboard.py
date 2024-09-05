@@ -5,10 +5,11 @@ import seaborn as sns
 import sqlite3
 import plotly.express as px
 import plotly.graph_objects as go
-
 import os
 import time
 import base64
+from collections import Counter
+import re
 
 # Set the path for the database
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'indian_railway_complaints.db')
@@ -174,14 +175,19 @@ if not data.empty:
     st.plotly_chart(fig, use_container_width=True)
 
     # Word Cloud of Complaints
-    st.markdown('<p class="medium-font">Most Common Words in Complaints</p>', unsafe_allow_html=True)
-    text = ' '.join(filtered_data['complaint_description'])
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+   st.markdown('<p class="medium-font">Most Common Words in Complaints</p>', unsafe_allow_html=True)
+text = ' '.join(filtered_data['complaint_description'])
+words = re.findall(r'\w+', text.lower())
+word_counts = Counter(words)
+common_words = word_counts.most_common(20)  # Get the 20 most common words
 
-    fig, ax = plt.subplots(figsize=(10, 5))
-    ax.imshow(wordcloud, interpolation='bilinear')
-    ax.axis('off')
-    st.pyplot(fig)
+# Create a bar chart of the most common words
+fig = px.bar(x=[word for word, count in common_words], 
+             y=[count for word, count in common_words],
+             labels={'x': 'Word', 'y': 'Count'},
+             title='Most Common Words in Complaints')
+fig.update_layout(xaxis_tickangle=-45)
+st.plotly_chart(fig, use_container_width=True)
 
     # Sample Complaints with Share Button
     st.markdown('<p class="medium-font">Sample Complaints</p>', unsafe_allow_html=True)
