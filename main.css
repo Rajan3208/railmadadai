@@ -1,0 +1,128 @@
+/* Main Content Styles */
+.stApp {
+    background-color: #f0f2f6;
+}
+
+body {
+    background-color: yellow !important;
+}
+
+.css-1d391kg {
+    background-color: #FF5733 !important;
+    padding: 20px !important;
+    color: white !important;
+}
+
+.input-container {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #f8f9fa !important;
+    border-radius: 25px !important;
+    padding: 10px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    margin-top: 20px !important;
+}
+
+.input-container input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    outline: none;
+    background-color: #f8f9fa;
+}
+
+.input-container button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.input-container .file-upload {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.input-container input[type="file"] {
+    display: none;
+}
+
+.left-sidebar {
+    background-color: #3498db;
+    padding: 20px;
+    height: 100vh;
+    border-right: 3px solid red;
+}
+
+.right-sidebar {
+    background-color: #e74c3c;
+    padding: 20px;
+    height: 100vh;
+    border-left: 3px solid red;
+}
+
+.main-content {
+    padding: 20px;
+    height: 100vh;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+}
+
+/* Sidebar Styles from dashboard.css */
+[data-testid="stSidebar"] {
+    background-image: url(https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png) !important;
+    background-size: 200px !important;
+    background-repeat: no-repeat !important;
+    background-position: 4px 20px !important;
+}
+/* ... (existing CSS) ... */
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.input-container textarea {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    outline: none;
+    background-color: #f8f9fa;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.file-upload-label {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.file-upload-label:hover {
+    background-color: #e9ecef;
+    border-radius: 50%;
+}
+
+/* Style for the submit button */
+.stButton > button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stButton > button:hover {
+    background-color: #2980b9;
+}
