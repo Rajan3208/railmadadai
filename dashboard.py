@@ -5,7 +5,6 @@ import seaborn as sns
 import sqlite3
 import plotly.express as px
 import plotly.graph_objects as go
-from wordcloud import WordCloud
 import os
 import time
 import base64
