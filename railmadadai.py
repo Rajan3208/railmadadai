@@ -4,7 +4,6 @@ import random
 import string
 from datetime import datetime
 import os
-import streamlit.components.v1 as components
 
 # Set the path for the database
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'indian_railway_complaints.db')
@@ -124,24 +123,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
-# Tawk.to integration
-tawk_to_script = """
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/66db0916ea492f34bc0e8171/1i73pn0eb';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-"""
-
-# Inject Tawk.to script
-components.html(tawk_to_script, height=0)
 
 # Layout
 col1, col2, col3 = st.columns([2,5,2])
