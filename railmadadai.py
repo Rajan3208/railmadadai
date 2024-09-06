@@ -4,6 +4,7 @@ import random
 import string
 from datetime import datetime
 import os
+import streamlit.components.v1 as components
 
 # Set the path for the database
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'indian_railway_complaints.db')
