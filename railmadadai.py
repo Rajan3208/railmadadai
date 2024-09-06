@@ -123,6 +123,8 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+# Tawk.to integration
 tawk_to_script = """
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -138,7 +140,7 @@ s0.parentNode.insertBefore(s1,s0);
 """
 
 # Inject Tawk.to script
-html(tawk_to_script)
+components.html(tawk_to_script, height=0)
 
 # Layout
 col1, col2, col3 = st.columns([2,5,2])
