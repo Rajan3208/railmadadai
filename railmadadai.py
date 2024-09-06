@@ -123,7 +123,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-<!--Start of Tawk.to Script-->
+tawk_to_script = """
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -135,7 +135,10 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
+"""
+
+# Inject Tawk.to script
+html(tawk_to_script)
 
 # Layout
 col1, col2, col3 = st.columns([2,5,2])
