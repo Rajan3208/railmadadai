@@ -146,7 +146,6 @@ with col2:
     if st.button("Submit Complaint", key="submit_complaint"):
         if complaint_text.strip() != "" and pnr and station and seat_number:
             reference_number = submit_complaint(selected_category, complaint_text, pnr, station, seat_number)
-            st.success(f"Your complaint has been submitted successfully. Your reference number is: {reference_number}")
             st.markdown(f"**Reference Number:** {reference_number}")
             st.success("Your complaint is submitted to Jaipur Junction. We will ensure that your problem gets resolved at Jaipur Junction.", icon="✅")
         else:
