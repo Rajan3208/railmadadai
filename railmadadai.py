@@ -73,8 +73,6 @@ create_complaints_table()
 st.set_page_config(page_title="Rail Madad Complaint Portal", page_icon="🚂", layout="wide")
 
 # Custom CSS to make the app more stylish and add the background image
-
-    
 st.markdown("""
 <style>
     .stApp {
@@ -110,11 +108,9 @@ st.markdown("""
     .quick-link {
         margin-bottom: 10px;
     }
-    /* Add some padding and margin to improve spacing */
     .stTextInput, .stSelectbox, .stTextArea {
         padding: 5px 0;
     }
-    /* Improve visibility of success and error messages */
     .stAlert {
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 5px;
@@ -151,6 +147,8 @@ with col2:
         if complaint_text.strip() != "" and pnr and station and seat_number:
             reference_number = submit_complaint(selected_category, complaint_text, pnr, station, seat_number)
             st.success(f"Your complaint has been submitted successfully. Your reference number is: {reference_number}")
+            st.markdown(f"**Reference Number:** {reference_number}")
+            st.success("Your complaint is submitted to Jaipur Junction. We will reach you soon.", icon="✅")
         else:
             st.error("Please fill in all fields before submitting.")
 
