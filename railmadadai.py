@@ -5,7 +5,7 @@ import string
 from datetime import datetime
 import os
 
-# Set the path for the database
+# Set the here path for the database
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'indian_railway_complaints.db')
 
 # Function to create complaints table
