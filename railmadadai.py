@@ -148,7 +148,7 @@ with col2:
             reference_number = submit_complaint(selected_category, complaint_text, pnr, station, seat_number)
             st.success(f"Your complaint has been submitted successfully. Your reference number is: {reference_number}")
             st.markdown(f"**Reference Number:** {reference_number}")
-            st.success("Your complaint is submitted to Jaipur Junction. We will reach you soon.", icon="✅")
+            st.success("Your complaint is submitted to Jaipur Junction. We will ensure that your problem gets resolved at Jaipur Junction.", icon="✅")
         else:
             st.error("Please fill in all fields before submitting.")
 
